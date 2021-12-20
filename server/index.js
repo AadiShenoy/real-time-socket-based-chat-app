@@ -20,11 +20,13 @@ app.use(express.static(publicPath));
 app.use(cors());
 const io = socketIO(server, {
   cors: {
-      origin: "http://localhost:3000",
-      mehtods: ["GET", "POST"],
+    origin: "http://localhost:3000",
+    mehtods: ["GET", "POST"],
   },
-}) ;
+});
 var users = new Users();
+
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
 io.on("connection", (socket) => {
   socket.on("leave", (params) => {
