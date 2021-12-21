@@ -20,7 +20,7 @@ app.use(express.static(publicPath));
 app.use(cors());
 const io = socketIO(server, {
   cors: {
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
     mehtods: ["GET", "POST"],
   },
 });
