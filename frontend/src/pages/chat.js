@@ -38,7 +38,7 @@ class Chat extends Component {
       room: this.props.match.params.room,
     };
 
-    socket = io("https://react-real-time-chatapp.herokuapp.com/");
+    socket = io("http://localhost:8080");
 
     socket.emit("join", params, function (err) {
       if (err) {

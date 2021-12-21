@@ -20,7 +20,7 @@ app.use(express.static(publicPath));
 app.use(cors());
 const io = socketIO(server, {
   cors: {
-    origin: "https://react-real-time-chatapp.herokuapp.com/",
+    origin: "http://localhost:3001",
     mehtods: ["GET", "POST"],
   },
 });
